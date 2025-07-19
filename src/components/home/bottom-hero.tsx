@@ -8,6 +8,8 @@ export default function BottomHero() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    const node = sectionRef.current;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -18,14 +20,10 @@ export default function BottomHero() {
       { threshold: 0.2 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+    if (node) observer.observe(node);
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
+      if (node) observer.unobserve(node);
     };
   }, []);
 
@@ -58,8 +56,8 @@ export default function BottomHero() {
             )}
           >
             <h2 className="text-3xl font-bold mb-6 text-gradient">
-              From Campus to Code  <br />
-             — Ready to Contribute
+              From Campus to Code <br />
+              — Ready to Contribute
             </h2>
             <p className="text-muted-foreground mb-6">
               With expertise in both frontend and backend technologies, I create
@@ -96,8 +94,6 @@ export default function BottomHero() {
                 <div className="rounded-full w-24 h-24 md:w-32 md:h-32 bg-secondary dark:bg-accent flex items-center justify-center">
                   <Code className="h-12 w-12 text-foreground" />
                 </div>
-
-                {/* Orbital circles */}
                 <div className="absolute inset-0 rounded-full border border-border animate-[spin_20s_linear_infinite] z-10">
                   <div className="absolute -top-2.5 -mt-1 left-1/2 -ml-1 w-2 h-2 bg-primary rounded-full"></div>
                 </div>

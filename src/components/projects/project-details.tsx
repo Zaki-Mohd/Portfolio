@@ -5,7 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { ArrowLeft, Github, Link2 } from "lucide-react";
 import { ProjectItem } from "@/utilities/data";
-import { motion } from "motion/react";
+// 1. IMPORT easeOut here
+import { motion, easeOut } from "framer-motion";
 
 const ProjectDetail = ({ project }: { project: ProjectItem }) => {
   const container = {
@@ -24,18 +25,19 @@ const ProjectDetail = ({ project }: { project: ProjectItem }) => {
       opacity: 1,
       y: 0,
       filter: "blur(0px)",
-      transition: { duration: 0.8, ease: "easeOut" },
+      // 2. USE the imported easeOut function here instead of the string
+      transition: { duration: 0.8, ease: easeOut },
     },
   };
 
   return (
-    <motion.section
-      className="py-25"
-      variants={container}
-      initial="hidden"
-      animate="show"
-    >
-      <motion.div className="container mx-auto">
+    <section className="py-25">
+      <motion.div
+        className="container mx-auto"
+        variants={container}
+        initial="hidden"
+        animate="show"
+      >
         <Button asChild variant="ghost" className="mb-6 -ml-3">
           <Link href="/projects">
             <span className="flex items-center gap-2">
@@ -74,7 +76,7 @@ const ProjectDetail = ({ project }: { project: ProjectItem }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {/* GitHub icon */}
+                <Github className="mr-2 h-4 w-4" />
                 GitHub Repository
               </Link>
             </Button>
@@ -86,7 +88,7 @@ const ProjectDetail = ({ project }: { project: ProjectItem }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {/* Link icon */}
+                <Link2 className="mr-2 h-4 w-4" />
                 Visit Live Site
               </Link>
             </Button>
@@ -107,13 +109,14 @@ const ProjectDetail = ({ project }: { project: ProjectItem }) => {
                     alt={`${project.title} screenshot ${idx + 1}`}
                     width={800}
                     height={600}
-                    className="object-cover aspect-video w-full h-[500px]"
+                    className="object-cover aspect-video w-full h-auto"
                   />
                 </div>
               ))}
             </div>
           </motion.div>
         ) : null}
+
         <motion.div
           className="prose dark:prose-invert max-w-none"
           variants={viewitem}
@@ -128,10 +131,9 @@ const ProjectDetail = ({ project }: { project: ProjectItem }) => {
           {project.features?.length ? (
             <>
               <h2 className="text-2xl font-bold mt-8 mb-4">Key Features</h2>
-              <ul className="space-y-2">
+              <ul className="list-disc pl-5 space-y-2">
                 {project.features.map((feat, i) => (
-                  <li key={i} className="flex items-start">
-                    <span className="mr-2 mt-1 inline-block h-1.5 w-1.5 rounded-full bg-primary"></span>
+                  <li key={i}>
                     <span>{feat}</span>
                   </li>
                 ))}
@@ -148,12 +150,12 @@ const ProjectDetail = ({ project }: { project: ProjectItem }) => {
             </>
           ) : null}
         </motion.div>
+        
         <Separator className="my-12" />
         <div className="flex justify-between items-center">
           <Button asChild variant="ghost">
             <Link href="/projects">
               <span className="flex items-center gap-2">
-                {/* ArrowLeft icon */}
                 <ArrowLeft />
                 Back to Projects
               </span>
@@ -168,7 +170,6 @@ const ProjectDetail = ({ project }: { project: ProjectItem }) => {
                 rel="noopener noreferrer"
                 aria-label="GitHub repo"
               >
-                {/* GitHub icon SVG */}
                 <Github />
               </Link>
             )}
@@ -185,7 +186,7 @@ const ProjectDetail = ({ project }: { project: ProjectItem }) => {
           </div>
         </div>
       </motion.div>
-    </motion.section>
+    </section>
   );
 };
 

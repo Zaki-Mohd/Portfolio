@@ -1,7 +1,9 @@
 "use client";
+
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { motion } from "motion/react";
+import Image from "next/image";
+import { motion, easeOut } from "framer-motion"; // ✅ correct import
 import { ArrowLeft, Github, LinkIcon } from "lucide-react";
 import { projectsData } from "@/utilities/data";
 
@@ -22,7 +24,7 @@ const Projects = () => {
       opacity: 1,
       y: 0,
       filter: "blur(0px)",
-      transition: { duration: 0.8, ease: "easeOut" },
+      transition: { duration: 0.8, ease: easeOut }, // ✅ type-safe easing
     },
   };
 
@@ -30,11 +32,7 @@ const Projects = () => {
     <section className="py-25">
       <div className="container mx-auto">
         <div className="mb-12">
-          <Button
-            asChild
-            variant="ghost"
-            className="mb-6 scale-transition -ml-3"
-          >
+          <Button asChild variant="ghost" className="mb-6 scale-transition -ml-3">
             <Link href="/" className="flex items-center gap-2">
               <ArrowLeft className="h-4 w-4" />
               Back to Home
@@ -42,12 +40,8 @@ const Projects = () => {
           </Button>
 
           <h1 className="text-3xl md:text-4xl font-bold mb-4">All Projects</h1>
-          <p
-            className="text-muted-foreground max-w-2xl "
-            style={{ animationDelay: "200ms" }}
-          >
-            A collection of my work across various domains, technologies, and
-            platforms. Click on any project to learn more about it.
+          <p className="text-muted-foreground max-w-2xl">
+            A collection of my work across various domains, technologies, and platforms. Click on any project to learn more about it.
           </p>
         </div>
 
@@ -63,14 +57,13 @@ const Projects = () => {
               variants={viewitem}
               className="bg-card rounded-lg overflow-hidden shadow-sm"
             >
-              <Link
-                href={`/projects/${project.slug}`}
-                className="block h-48 overflow-hidden"
-              >
-                <img
+              <Link href={`/projects/${project.slug}`} className="block h-48 relative">
+                <Image
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  layout="fill"
+                  objectFit="cover"
+                  className="transition-transform duration-500 hover:scale-105"
                 />
               </Link>
 
@@ -80,9 +73,7 @@ const Projects = () => {
                     {project.title}
                   </h3>
                 </Link>
-                <p className="text-muted-foreground text-sm mb-4">
-                  {project.description}
-                </p>
+                <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tech.map((tech) => (
@@ -96,10 +87,7 @@ const Projects = () => {
                 </div>
 
                 <div className="flex justify-between items-center">
-                  <Link
-                    href={`/projects/${project.slug}`}
-                    className="text-sm font-medium hover-underline"
-                  >
+                  <Link href={`/projects/${project.slug}`} className="text-sm font-medium hover-underline">
                     View Details
                   </Link>
 
