@@ -1,13 +1,12 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, Variants } from "framer-motion";
 import { Github, Linkedin, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export default function Hero() {
-  // Animation variants
-  const container = {
+  const container: Variants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
@@ -17,21 +16,22 @@ export default function Hero() {
     },
   };
 
-  const item = {
+  const item: Variants = {
     hidden: { opacity: 0, y: 20, filter: "blur(10px)" },
     show: {
       opacity: 1,
       y: 0,
       filter: "blur(0px)",
-      transition: { duration: 0.8, ease: "easeOut" },
+      transition: {
+        duration: 0.8,
+        ease: [0.25, 0.1, 0.25, 1],
+      },
     },
   };
 
   return (
     <section className="relative pt-24 pb-12 md:pt-32 md:pb-20 overflow-hidden">
-      {/* Enhanced Background Texture */}
       <div className="absolute inset-0 z-0">
-        {/* Grid Pattern */}
         <div
           className="absolute inset-0 opacity-[0.15] dark:opacity-[0.07]"
           style={{
@@ -42,19 +42,13 @@ export default function Hero() {
             backgroundSize: "40px 40px",
           }}
         />
-
-        {/* Diagonal Lines */}
         <div
           className="absolute inset-0 opacity-[0.1] dark:opacity-[0.05]"
           style={{
             backgroundImage: `repeating-linear-gradient(45deg, var(--primary-rgb), var(--primary-rgb) 1px, transparent 1px, transparent 20px)`,
           }}
         />
-
-        {/* Radial Gradient */}
         <div className="absolute inset-0 bg-gradient-radial from-primary/5 via-transparent to-transparent" />
-
-        {/* Decorative Circles */}
         <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-primary/5 blur-3xl" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-primary/5 blur-3xl" />
       </div>
@@ -66,27 +60,23 @@ export default function Hero() {
           initial="hidden"
           animate="show"
         >
-          {/* Main Title */}
           <motion.h1
             className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold tracking-tight"
             variants={item}
           >
             Mohammad Zaki <br className="hidden sm:inline" />
             <span className="text-primary relative">
-            
               <span className="absolute -bottom-2 left-0 right-0 h-1 bg-primary/30 rounded-full"></span>
             </span>
           </motion.h1>
 
-          {/* Brief Description */}
           <motion.p
             className="max-w-[700px] text-lg md:text-xl text-muted-foreground"
             variants={item}
           >
-           I craft thoughtful digital experiences that blend design and technology
+            I craft thoughtful digital experiences that blend design and technology
           </motion.p>
 
-          {/* Tagline */}
           <motion.div
             className="text-sm text-muted-foreground px-4 py-2 rounded-full bg-background/80 backdrop-blur-sm border"
             variants={item}
@@ -94,11 +84,7 @@ export default function Hero() {
             I simplify complexity through thoughtful design and smart development.
           </motion.div>
 
-          {/* CTA Buttons */}
-          <motion.div
-            className="flex flex-col sm:flex-row gap-4 mt-8"
-            variants={item}
-          >
+          <motion.div className="flex flex-col sm:flex-row gap-4 mt-8" variants={item}>
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -113,18 +99,12 @@ export default function Hero() {
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
             >
-              <Button
-                variant="outline"
-                size="lg"
-                asChild
-                className="rounded-full px-8"
-              >
+              <Button variant="outline" size="lg" asChild className="rounded-full px-8">
                 <Link href="/contact">Get In Touch</Link>
               </Button>
             </motion.div>
           </motion.div>
 
-          {/* Social Links */}
           <motion.div className="flex space-x-4 mt-8" variants={item}>
             <motion.a
               href="https://github.com/Zaki-Mohd"
