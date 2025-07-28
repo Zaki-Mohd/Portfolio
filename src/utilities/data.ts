@@ -152,4 +152,34 @@ export const projectsData: ProjectItem[] = [
     github: "https://github.com/Zaki-Mohd/Assignment_Buddy",
     slug: "assignment-buddy",
   },
+   {
+    title: "Stall OS",
+    description:
+      "StallOS is a groundbreaking AI-powered assistant designed for Indian street food vendors. Built with Chaat-GPT, it helps optimize recipes, reduce ingredient waste, and boost daily profits — all through simple voice input. It's not just a helper — it's a smart kitchen partner in their pocket.",
+    longDescription:
+      "StallOS is an AI-powered assistant designed for Indian street food vendors, built using a custom-trained model called Chaat-GPT. Through simple voice inputs, it helps vendors adjust recipes based on ingredient quality, optimize profit margins using real-time pricing, and reduce daily waste by suggesting new dishes from leftovers. By combining smart cooking, cost analysis, and inventory usage into one tool, StallOS acts as a trusted kitchen companion — helping vendors serve consistent taste, make smarter decisions, and grow their daily profits with ease.",
+        features: [
+      "AI Sous-Chef – Provides smart recipe adjustments based on ingredient taste and quality to maintain flavor consistency",
+      "Profit Optimizer – Calculates real-time profit margins and suggests pricing strategies to maximize daily earnings",
+      "Performance Analytics – Displays dynamic sales charts and performance trends to track business growth",
+      "Zero-Waste Genius – Suggests new recipes using leftover ingredients to minimize waste and increase profit",
+      "Chaat-GPT Voice – Enables voice-driven interaction with the system using natural, local language input",
+      "Daily Sales Strategy – Recommends which items to promote based on ingredient prices and potential profit"
+
+      
+    ],
+    challenges:
+      "Building StallOS involved key challenges like enabling accurate voice input in regional languages, translating subjective taste descriptions into precise recipe changes, and dynamically calculating profit margins from daily price fluctuations. Generating usable recipes from leftovers and ensuring all features worked seamlessly and fast required smart AI orchestration and efficient backend design.",
+      image:
+      "/images/s1.png",
+    images: [
+      "/images/s2.png",
+      "/images/s4.png",
+      "/images/s5.png",
+    ],
+    tech: ["Google-Gemini", "Vapi", "React", "Agents","AI Agents"],
+    github: "https://github.com/Zaki-Mohd/StallOs.git",
+     live: "https://stall-os.vercel.app/",
+    slug: "stall-os",
+  },
 ];
