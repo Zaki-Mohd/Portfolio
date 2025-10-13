@@ -19,7 +19,7 @@ const experiences = [
     title: "Teaching Assistant - MERN Stack",
     company: "Apna College",
     location: "Remote",
-    period: "May 2025 - Present",
+    period: "May 2025 - October 2025",
     skills: ["MongoDB", "Express.js", "React.js", "Node.js", "JavaScript"],
     description:
       "Assisted students in resolving doubts and provided guidance on projects related to the MERN stack. Developed educational content and resources to enhance learning.",  
@@ -35,13 +35,13 @@ const experiences = [
       "Reviewed techinal notes and documentations on Opearing Systems. Ensured accuracy and clarity of content for educational purposes.",},
   {
     id: 3,
-    title: "Volunteer",
+    title: "Coordinator",
     company: "Google Developer Groups (GDG) - VNRVJIET",
     location: "Hyderabad, India",
     period: "October 2024 - Present",
     skills: ["AI", "NEXT.js", "GCP","Cloud", "Agent Development Kit - ADK"],
     description:
-     "Contributed as a Design Volunteer at GDGC, where I created visual assets, graphic designs, and supported the team in delivering engaging design solutions for events and campaigns" },
+     "Contributed as a Social Media Coordinator and Design Volunteer at GDGC, where I created visual assets, graphic designs, and supported the team in delivering engaging design solutions for events and campaigns" },
 ];
 
 export default function WorkExperience() {

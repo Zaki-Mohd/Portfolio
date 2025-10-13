@@ -70,6 +70,41 @@ export const projectsData: ProjectItem[] = [
     slug: "code-editor",
   },
   {
+  title: "Saarthi - Smart Document Intelligence Assistant",
+  description:
+    "An AI-powered assistant for KMRL that transforms unstructured document overload into actionable intelligence through automation, translation, and real-time insights.",
+  longDescription:
+    "Saarthi is not just a document manager — it’s a Smart Assistant built to revolutionize how KMRL handles information. Designed to automatically collect, process, and analyze documents from multiple sources, Saarthi uses AI to extract insights, answer queries, and ensure compliance. From OCR-based document understanding to bilingual (English + Malayalam) Q&A, it enables officers to interact naturally with their data and receive intelligent, traceable answers. Integrated with n8n for workflow automation, Saarthi bridges the gap between data silos and decision-making with zero manual overhead.",
+  features: [
+    "Seamless Document Ingestion from Email, SharePoint, Maximo, WhatsApp, Cloud & Scans",
+    "AI Processing: OCR, Translation (English + Malayalam), Summarization, Metadata Extraction",
+    "Natural Language Q&A: Ask in English/Malayalam → Get precise, source-linked answers",
+    "Proactive Insights: Daily digests, compliance & safety alerts, root-cause analysis",
+    "Trust & Traceability with secure role-based access",
+    "Workflow Automation using n8n (alerts, 3rd-party integrations, ERP, Slack, Email)",
+    "End-to-End Automation with minimal manual intervention"
+  ],
+  challenges:
+    "Integrating diverse document sources like SharePoint, Maximo, and WhatsApp while maintaining consistent parsing and metadata extraction posed major challenges. Building bilingual NLP support for English and Malayalam required fine-tuning translation pipelines and custom tokenizers for regional data. Ensuring data privacy and access control with Supabase Auth demanded secure JWT-based role mapping. The RAG (Retrieval-Augmented Generation) system using LangChain.js and Gemini also required efficient vector storage in pgvector for low-latency semantic search. Finally, automating workflows via n8n involved designing modular triggers and seamless third-party app integrations.",
+  image: "/images/saarthi.png",
+  images: [
+    "/images/saarthi-dashboard.png",
+    "/images/saarthi-chat.png",
+    "/images/saarthi-architecture.jpg"
+  ],
+  tech: [
+    "LangChain.js",
+    "Google Gemini",
+    "Next.js",
+    "Tailwind CSS",
+    "Express.js",
+    "Supabase (Postgres + pgvector)",
+    "n8n Automation"
+  ],
+  github: "https://github.com/Zaki-Mohd/SIH.git",
+  slug: "saarthi-smart-assistant"
+ },
+  {
     title: "WanderLust - Under Maintenance",
     description:
       "A travel planning app that helps users discover and plan their next adventure with personalized recommendations.",
@@ -152,6 +187,7 @@ export const projectsData: ProjectItem[] = [
     github: "https://github.com/Zaki-Mohd/Assignment_Buddy",
     slug: "assignment-buddy",
   },
+<<<<<<< HEAD
    {
     title: "Stall OS",
     description:
@@ -182,4 +218,7 @@ export const projectsData: ProjectItem[] = [
      live: "https://stall-os.vercel.app/",
     slug: "stall-os",
   },
+=======
+  
+>>>>>>> 8921664 (Projects Updated)
 ];

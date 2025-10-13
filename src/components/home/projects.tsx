@@ -34,16 +34,15 @@ const projects = [
     live: "https://z-plus-plus.vercel.app/",
   },
   {
-    id: "WanderLust",
-    title: "WanderLust - Under Maintenance",
-    description:
-      "A travel planning app that helps users discover and plan their next adventure with personalized recommendations.",
-    image:
-    "/images/wanderlust.png", 
-    tags: ["","MongoDB", "Express.js", "Node.js","Ejs","JavaScript"],
-    github: "https://github.com/Zaki-Mohd/delta-project-1",
-    live: "https://delta-project-1-efgd.onrender.com/listings",
-  },
+  id: "Saarthi",
+  title: "Saarthi - Smart Document Intelligence Assistant",
+  description:
+    "An AI-powered assistant for KMRL that transforms document overload into actionable intelligence with automation, translation, and real-time insights.",
+  image: "/images/saarthi.png",
+  tags: ["LangChain.js", "Google Gemini", "Next.js", "Express.js", "Supabase", "n8n", "Tailwind CSS"],
+  github: "https://github.com/Zaki-Mohd/SIH.git"
+  }
+
 ];
 
 export default function Projects() {
