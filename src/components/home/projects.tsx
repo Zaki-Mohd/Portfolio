@@ -18,7 +18,7 @@ const projects = [
       "AI-powered voice agent that conducts interviews, helping recruiters save time, reduce bias, and hire smarter.",
     image:   "/images/ai-recruiter3.png",
 
-    tags: ["","Next.js", "JavaScript", "Tailwind CSS", "Supabase", "OpenAI"],
+    tags: ["Next.js","Next.js", "JavaScript", "Tailwind CSS", "Supabase", "OpenAI"],
     github: "https://github.com/Zaki-Mohd/ai-recruiter",
     live: "https://ai-recruiter-azure.vercel.app/",
   },
@@ -29,7 +29,7 @@ const projects = [
       "An AI powered code editor that provides real-time code suggestions, error detection, and debugging assistance.",
     image:
     "/images/zplusplus.png",  
-    tags: ["","React", "Node.js","Express.js", "Tailwind CSS", "ContextAPI"],
+    tags: ["React","React", "Node.js","Express.js", "Tailwind CSS", "ContextAPI"],
     github: "https://github.com/Zaki-Mohd/Z_Plus_Plus",
     live: "https://z-plus-plus.vercel.app/",
   },
