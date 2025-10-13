@@ -187,7 +187,6 @@ export const projectsData: ProjectItem[] = [
     github: "https://github.com/Zaki-Mohd/Assignment_Buddy",
     slug: "assignment-buddy",
   },
-<<<<<<< HEAD
    {
     title: "Stall OS",
     description:
@@ -218,7 +217,5 @@ export const projectsData: ProjectItem[] = [
      live: "https://stall-os.vercel.app/",
     slug: "stall-os",
   },
-=======
   
->>>>>>> 8921664 (Projects Updated)
 ];
